@@ -2,9 +2,11 @@
 <html>
     <head>
         <title> <%=shopname%> </title>
+        <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <h1> Search in <%=shopname%> Shop </h1>
+        <%- include("header") %>
+        <h1> <u> Search in <%=shopname%> Shop </u> </h1>
         <p> Search here... </p>
 
         <form action="/search_result" method="GET">

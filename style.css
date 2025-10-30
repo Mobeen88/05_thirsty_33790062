@@ -1,0 +1,124 @@
+/* General */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    background-color: #ECE3CE;
+    text-align: center;
+    color: #3A4D39
+}
+
+h1{
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 30px 0 40px 0;
+}
+
+h2{
+    font-weight: 500;
+}
+
+p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.list{
+    background: #AFC8AD;
+    color: #1B3C53;
+    margin: 15px auto;
+    padding: 20px 100px;
+    border-radius: 5px;
+    max-width: 400px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+u{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+/* Input Forms */
+form{
+    background-color: #739072;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    color: white;
+}
+
+input[type="text"], input[type="email"]{
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    background-color: #FCF9EA;
+    color: #1B3C53;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: wheat;
+}
+
+/* Navigation */
+header {
+    background-color: #739072;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+nav ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: #222831;
+    font-weight: bold;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+hr{
+    border: none;
+    height: 3px;
+    background-color: #3A4D39;
+    width: 100%;
+}
