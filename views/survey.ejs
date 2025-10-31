@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> <%=shopname%> </title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <%- include("header") %>
+        <h1> <u> Survey </u> </h1>
+        <form method="POST" action="/surveyed">
+            First Name: <input id="first" type="text" name="first">
+        <br><br>
+            Last Name: <input id="last" type="text" name="last">
+        <br><br>
+            Email: <input id="email" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <br><br>
+            How old are you?: <input id="age" type="number" name="age" min="1" max="100">
+        <br><br>
+            Which of the following drinks do you consume?:
+            <label for="beer">Beer</label>
+                <input id="consume" type="radio" name="consume">
+            <label for="wine">Wine</label>
+                <input id="consume" type="radio" name="consume">
+            <label for="soft drinks">Soft Drinks</label>
+                <input id="consume" type="radio" name="consume">
+            <label for="hot drinks">Hot Drinks</label>
+                <input id="consume" type="radio" name="consume">
+        <br><br>
+            Are you a student?: <input id="student" type="checkbox" name="student">
+        <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -4,7 +4,12 @@ const router = express.Router();
 
 //Define data
 var shopData = {shopname: "The Thirsty Student",
-                productCatergories: ["Beer", "Wine", "Soft Drinks", "Hot Drinks"]};
+    productCatergories: ["Beer", "Wine", "Soft Drinks", "Hot Drinks"],
+    shops: [
+        {image:"shopkeeper 2.png", location:"Lumious", manager:"Urbain", address:"Lumious, ZA"},
+        {image:"shopkeeper 1.png", location:"Pallet Town", manager:"Oak", address:"Kanto, FL"},
+        {image:"shopkeeper.png", location:"Shalour City", manager:"Korina", address:"Shalour, XYZ"}
+    ]};
 
 //Handle the main routes
 router.get("/", (req, res) => {
@@ -31,6 +36,16 @@ router.get("/register", (req, res) => {
 router.post("/registered", (req, res) => {
     res.send("Hello " + req.body.first + " " + req.body.last + " you have now registered!"
          + "We will send an email to you at: " + req.body.email);
+});
+
+router.get("/survey", (req, res) => {
+    res.render("survey.ejs", shopData);
+});
+
+router.post("/surveyed", (req, res) => {
+    res.send("Hello " + req.body.first + " " + req.body.last + " Thank you for completing the survey!"
+         + "We will send an email to you at: " + req.body.email
+        + ". To verify, you are a" + req.body.student + " aged " + req.body.age + " and the bevrage you consumer is: " + req.body.consume);
 });
 
 //Export the router object so index.js can access it

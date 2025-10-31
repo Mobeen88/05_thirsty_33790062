@@ -7,6 +7,29 @@
     <body>
         <%- include("header") %>
         <h1> <u> About <%=shopname%> Shop </u> </h1>
-        <p> We sell all sorts of drinks </p>
+        <p> Here is the list of all avaliable shops: </p>
+
+        <div class="shopGrid">
+            <% for(let i = 0; i < shops.length; i++) { %>
+                <div class="shopWrap">
+                    <div class="shopCard">
+                        <img src= "<%= shops[i].image %>">
+                        <h3> <%= shops[i].location %> </h3>
+                        <p> <strong> Manager: </strong> <%= shops[i].manager %> </p>
+                        <p> <strong>Address: </strong> <%= shops[i].address %> </p>
+                    </div>
+
+                    <div class="shopList">
+                        <h4> Avaliable Drinks: </h4>
+                        <ul>
+                            <% for(let k = 0; k < productCatergories.length; k++) { %>
+                                <li> <%= productCatergories[k] %> </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
     </body>
 </html>
