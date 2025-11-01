@@ -8,25 +8,21 @@
         <%- include("header") %>
         <h1> <u> Survey </u> </h1>
         <form method="POST" action="/surveyed">
-            First Name: <input id="first" type="text" name="first">
+            <p> First Name: </p> <input id="first" type="text" name="first" required>
         <br><br>
-            Last Name: <input id="last" type="text" name="last">
+            <p> Last Name: </p> <input id="last" type="text" name="last" required>
         <br><br>
-            Email: <input id="email" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <p> Email: </p> <input id="email" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         <br><br>
-            How old are you?: <input id="age" type="number" name="age" min="1" max="100">
+           <p> How old are you?: </p> <input id="age" type="number" name="age" min="1" max="100" required>
         <br><br>
-            Which of the following drinks do you consume?:
-            <label for="beer">Beer</label>
-                <input id="consume" type="radio" name="consume">
-            <label for="wine">Wine</label>
-                <input id="consume" type="radio" name="consume">
-            <label for="soft drinks">Soft Drinks</label>
-                <input id="consume" type="radio" name="consume">
-            <label for="hot drinks">Hot Drinks</label>
-                <input id="consume" type="radio" name="consume">
+            <p> Which of the following drinks do you consume?: </p>
+            <% for(let i = 0; i < productCatergories.length; i++) { %>
+                <input type="radio" id="drink <%= i %>" name="consume" value="<%= productCatergories[i] %>" required>
+                <label for="drink <%= i %>"> <%= productCatergories[i] %> </label>
+             <% } %>
         <br><br>
-            Are you a student?: <input id="student" type="checkbox" name="student">
+            <p> Are you a student?: </p> <input id="student" type="checkbox" name="student" value="Yes" value="No">
         <br><br>
             <input type="submit" value="Submit">
         </form>

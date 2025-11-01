@@ -26,7 +26,9 @@ router.get("/search", (req, res) => {
 
 //Search in the database
 router.get("/search_result", function (req, res) {
-    res.send("You Search For: " + req.query.search_text + " in " + req.query.catergory);
+    res.send(`
+        <p> <strong> You Search For: </strong> ${req.query.search_text} in ${req.query.catergory} </p>`
+    );
 });
 
 router.get("/register", (req, res) => {
@@ -34,8 +36,10 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/registered", (req, res) => {
-    res.send("Hello " + req.body.first + " " + req.body.last + " you have now registered!"
-         + "We will send an email to you at: " + req.body.email);
+    res.send(`
+        <p> Hello <strong> ${req.body.first} ${req.body.last} </strong> you have now registered! </p>
+          <p> We will send an email to you at: <strong> ${req.body.email} </strong> </p>`
+        );
 });
 
 router.get("/survey", (req, res) => {
@@ -43,9 +47,13 @@ router.get("/survey", (req, res) => {
 });
 
 router.post("/surveyed", (req, res) => {
-    res.send("Hello " + req.body.first + " " + req.body.last + " Thank you for completing the survey!"
-         + "We will send an email to you at: " + req.body.email
-        + ". To verify, you are a" + req.body.student + " aged " + req.body.age + " and the bevrage you consumer is: " + req.body.consume);
+    res.send(`
+        <h1> ${req.body.first} ${req.body.last} Thank you for completing the survey! </h1>
+        <p> <strong> To verify, your email is: </strong> ${req.body.email} </p>
+        <p> <strong> Age: </strong> ${req.body.age} </p>
+        <p> <strong> Your preferred drink is: </strong> ${req.body.consume} </p>
+        <p> <strong> You are student: </strong> ${req.body.student ? "Yes" : "No"} </p>`
+    );
 });
 
 //Export the router object so index.js can access it

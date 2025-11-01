@@ -8,9 +8,9 @@
         <%- include("header") %>
         <h1> <u> The Register Page </u> </h1>
         <form method="POST" action="/registered">
-            First Name: <input id="first" type="text" name="first">
+            First Name: <input id="first" type="text" name="first" required>
         <br><br>
-            Last Name: <input id="last" type="text" name="last">
+            Last Name: <input id="last" type="text" name="last" required>
         <br><br>
             Email: <input id="email" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         <br><br>
