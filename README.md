@@ -32,6 +32,7 @@ This project demonstrates the use of routing, templating, and static asset handl
 
 - **Node.js**
 - **Express.js**
+- **EJS**
 - **JavaScript**
 - **HTML**
 - **CSS**
